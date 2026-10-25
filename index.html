@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hebbal Lake - Have your say</title>
+<meta name="description" content="A 12 m road is proposed beside Hebbal Lake. Send your suggestion to the Greater Bengaluru Authority in 2 minutes.">
+<meta property="og:title" content="Hebbal Lake - Have your say">
+<meta property="og:description" content="A 12 m road is proposed beside Hebbal Lake. Send your suggestion to GBA in 2 minutes.">
+<meta property="og:type" content="website">
+<style>
+:root{
+  --ink:#17242e; --ink2:#4b5a64; --teal:#0f766e; --teal-d:#0b5a54;
+  --blue:#0e4f7a; --coral:#e4572e; --coral-d:#c74522;
+  --sand:#f7f4ef; --card:#ffffff; --line:#e6e1d8; --gold:#f2b138;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;color:var(--ink);background:var(--sand);line-height:1.55;-webkit-text-size-adjust:100%}
+.wrap{max-width:640px;margin:0 auto;padding:0 18px}
+.hero{background:linear-gradient(160deg,#0b3a5c 0%,#0f766e 78%,#12a594 100%);color:#fff;padding:44px 0 0;position:relative;overflow:hidden}
+.hero h1{font-size:30px;line-height:1.18;letter-spacing:-0.02em;font-weight:800}
+.hero p.lead{margin-top:12px;font-size:16px;color:#d9f0ec;max-width:34em}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);color:#fff;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600}
+.cta{display:block;text-align:center;background:var(--coral);color:#fff;text-decoration:none;font-weight:700;font-size:17px;padding:16px 20px;border-radius:14px;margin-top:22px;box-shadow:0 6px 18px rgba(0,0,0,.22)}
+.cta:active{background:var(--coral-d)}
+.wave{display:block;width:100%;height:44px;margin-top:30px}
+section{padding:34px 0 6px}
+h2{font-size:21px;letter-spacing:-0.01em;margin-bottom:6px}
+.kicker{font-size:12.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--teal);margin-bottom:8px}
+.sub{color:var(--ink2);font-size:14.5px;margin-bottom:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;box-shadow:0 1px 3px rgba(23,36,46,.05)}
+.map-img{width:100%;border-radius:12px;display:block;border:1px solid var(--line)}
+.caption{font-size:12.5px;color:var(--ink2);margin-top:8px}
+.facts{margin-top:14px}
+.fact{display:flex;gap:10px;padding:9px 0;border-top:1px dashed var(--line);font-size:14.5px}
+.fact:first-child{border-top:none}
+.fact .dot{flex:0 0 8px;height:8px;border-radius:50%;background:var(--teal);margin-top:7px}
+.steps{counter-reset:s}
+.step{display:flex;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
+.step:first-child{border-top:none}
+.step .n{flex:0 0 34px;height:34px;border-radius:50%;background:var(--teal);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:16px}
+.step b{display:block;font-size:15.5px}
+.step span{color:var(--ink2);font-size:14px}
+label{display:block;font-size:13.5px;font-weight:700;margin:14px 0 6px}
+textarea,input[type=text]{width:100%;border:1.5px solid var(--line);border-radius:12px;padding:12px 14px;font-size:16px;font-family:inherit;background:#fff;color:var(--ink)}
+textarea{min-height:96px;resize:vertical}
+textarea:focus,input:focus{outline:2px solid var(--teal);border-color:var(--teal)}
+.hint{font-size:12.5px;color:var(--ink2);margin-top:6px}
+.preview{background:#fbfaf7;border:1px dashed #cfc7b8;border-radius:12px;padding:14px;margin-top:14px;font-size:13.5px;white-space:pre-wrap;max-height:270px;overflow:auto;color:#33414b}
+.preview b{color:var(--ink)}
+.btnrow{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+.btn{flex:1 1 140px;text-align:center;text-decoration:none;font-weight:700;font-size:15.5px;padding:14px 12px;border-radius:12px;border:none;cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--teal);color:#fff}
+.btn-primary:active{background:var(--teal-d)}
+.btn-ghost{background:#fff;color:var(--teal-d);border:1.5px solid var(--teal)}
+.btn-sent{background:#fff;color:var(--coral-d);border:1.5px solid var(--coral)}
+.tiny{font-size:12px;color:var(--ink2);margin-top:10px}
+.sentbox{display:none;margin-top:16px;background:#fdf3ec;border:1px solid #f4cdb9;border-radius:12px;padding:14px;text-align:center}
+.sentbox p{font-size:14px;color:#7a3a1d;margin-bottom:10px}
+.res{display:flex;gap:12px;padding:13px 0;border-top:1px solid var(--line);text-decoration:none;color:inherit}
+.res:first-child{border-top:none}
+.res .ic{flex:0 0 38px;height:38px;border-radius:10px;background:#e7f2f0;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;letter-spacing:.04em;color:var(--teal-d)}
+.res b{display:block;font-size:14.5px;color:var(--blue)}
+.res span{font-size:13px;color:var(--ink2)}
+.sharebox{display:flex;gap:10px;flex-wrap:wrap}
+.quote{background:linear-gradient(135deg,#0b3a5c,#0f766e);color:#fff;border-radius:16px;padding:22px 20px;font-size:17px;line-height:1.5;font-weight:600}
+.quote small{display:block;margin-top:10px;font-weight:400;color:#cfe8e3;font-size:13px}
+footer{margin-top:36px;background:#10222e;color:#b9c8cf;padding:26px 0 90px;font-size:12.5px}
+footer b{color:#fff}
+footer a{color:#7fd1c3}
+#consent{position:fixed;left:0;right:0;bottom:0;background:#10222e;color:#e6eef1;padding:14px 16px;font-size:13px;display:none;z-index:50;box-shadow:0 -4px 18px rgba(0,0,0,.3)}
+#consent .row{display:flex;gap:10px;margin-top:10px}
+#consent button{flex:1;padding:11px;border-radius:10px;border:none;font-weight:700;font-size:14px;cursor:pointer}
+#cYes{background:var(--teal);color:#fff}
+#cNo{background:#294250;color:#cfe0e6}
+.toast{position:fixed;left:50%;transform:translateX(-50%);bottom:84px;background:#17242e;color:#fff;padding:10px 18px;border-radius:999px;font-size:13.5px;display:none;z-index:60}
+@media(min-width:520px){.hero h1{font-size:34px}}
+.map-link-wrap{margin:0 0 10px}.map-link{display:inline-block;padding:10px 14px;border:1.5px solid #2f6f4f;border-radius:10px;color:#2f6f4f;font-weight:600;text-decoration:none}.map-link:hover{background:#eef5f0}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <h1>A new road is proposed beside Hebbal Lake.</h1>
+    <p class="lead">Bengaluru's draft road plan is open for public suggestions right now. In a few minutes, this page opens a ready-to-review email addressed to the Greater Bengaluru Authority. You check it and send it yourself.</p>
+    <div class="chips">
+      <span class="chip">12 m road beside the lake</span>
+      <span class="chip">Suggestions open now</span>
+      <span class="chip">A few minutes to be heard</span>
+    </div>
+    <a class="cta" href="#write" data-ev="cta_hero">Write your suggestion</a>
+  </div>
+  <svg class="wave" viewBox="0 0 360 44" preserveAspectRatio="none" aria-hidden="true"><path d="M0,28 C60,44 120,8 180,22 C240,36 300,12 360,26 L360,44 L0,44 Z" fill="#f7f4ef"/></svg>
+</header>
+
+<main class="wrap">
+
+<section id="what">
+  <div class="kicker">What is proposed</div>
+  <h2>A 12-metre road along the lake</h2>
+  <p class="sub">The Greater Bengaluru Authority's draft circulation plan for Bengaluru North (Grid 7) draws a proposed 12-metre Hebbala - Thanisandra road right beside Hebbal Lake.</p>
+  <div class="card">
+    <p class="map-link-wrap"><a class="map-link" href="https://data.opencity.in/dataset/58925093-3303-456d-8f9d-7e4062465d3c/resource/5f87eb2e-fb94-4a38-bdd7-b2ec6c82e74e/download/proposedcirculationplanblr-bncc.pdf" target="_blank" rel="noopener">See the road drawn on the official plan (PDF, Grid 7, page 8)</a></p>
+    <p class="caption">Source: GBA Proposed Circulation Plan, Bengaluru North City Corporation, Grid 7 (official PDF hosted on OpenCity). The road label appears beside Hebbal Lake on page 8.</p>
+    <div class="facts">
+      <div class="fact"><span class="dot"></span><span>Proposed 12 m Hebbala - Thanisandra road, drawn along the lake's edge on Grid 7 of the plan.</span></div>
+      <div class="fact"><span class="dot"></span><span>Public suggestions and objections are invited under Notification No. CC/GBA/PR/304/2026-27 (gazette dated 12 October 2026).</span></div>
+      <div class="fact"><span class="dot"></span><span>The notice allows 60 days from publication. Send yours early, don't wait for the last day.</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="kicker">How it works</div>
+  <h2>Three quick steps</h2>
+  <div class="card steps">
+    <div class="step"><div class="n">1</div><div><b>Add your concern</b><span>One line in your own words. Optional, but it makes your email yours.</span></div></div>
+    <div class="step"><div class="n">2</div><div><b>Review the email</b><span>We merge your concern into a complete, correctly addressed draft. The standard details are already filled in.</span></div></div>
+    <div class="step"><div class="n">3</div><div><b>Send it yourself</b><span>It opens in your own email app, addressed to GBA. You check it and press send. Keep your sent email as proof.</span></div></div>
+  </div>
+</section>
+
+<section id="write">
+  <div class="kicker">Your suggestion</div>
+  <h2>Write it in your words</h2>
+  <p class="sub">Posting on social media alone isn't a submission. Sending this email to GBA submits your suggestion.</p>
+  <div class="card">
+    <label for="concern">Your concern (optional)</label>
+    <textarea id="concern" data-clarity-mask="true" maxlength="500" placeholder="Example: I'm concerned about the road's effect on the lake, its birds and drainage. Please assess the impact and consider alignments away from the lake."></textarea>
+    <label for="name">Your name (optional)</label>
+    <input type="text" id="name" data-clarity-mask="true" maxlength="80" placeholder="Added as the signature of your email">
+    <p class="hint">Whatever you type stays on this page in your device. It only leaves when you send the email yourself.</p>
+    <div class="preview" id="preview" data-clarity-mask="true" aria-label="Email preview"></div>
+    <div class="btnrow">
+      <a class="btn btn-primary" id="openMail" href="#" data-ev="open_email">Open email app</a>
+      <button class="btn btn-ghost" id="copyMail" data-ev="copy_email">Copy email</button>
+    </div>
+    <div class="sentbox" id="sentbox">
+      <p><b>Sent it?</b> One tap helps the campaign count real participation. Nothing personal is stored.</p>
+      <button class="btn btn-sent" id="iSent">Yes, I sent my suggestion</button>
+    </div>
+    <p class="tiny">Sends to gba.masterplan@gmail.com, the address in the official notice. You can also post it to: Office of the Chief Town Planner, NR Square, Bengaluru - 560002.</p>
+  </div>
+</section>
+
+<section id="why">
+  <div class="kicker">Why it matters</div>
+  <h2>Lakes are not spare land</h2>
+  <div class="quote">Haven't we lost enough of Bengaluru's lakes already? Let's not wait until later to ask what we could have done. Let's do what we can today, for a better tomorrow.
+    <small>Traffic needs attention. Protecting the lake, its trees and its drainage can be part of the solution, not the price of it.</small>
+  </div>
+</section>
+
+<section id="resources">
+  <div class="kicker">Know more</div>
+  <h2>Sources and references</h2>
+  <div class="card">
+    <a class="res" data-ev="res_gazette" href="https://ifxng3igsmvptlcs.public.blob.vercel-storage.com/doc/news/0dc8cde6-5aaa-43f7-b91d-642e7315168e.pdf" target="_blank" rel="noopener"><div class="ic">GAZ</div><div><b>Official gazette notice (12 Oct 2026)</b><span>The notification inviting suggestions and objections, with the email and postal addresses.</span></div></a>
+    <a class="res" data-ev="res_plan" href="https://data.opencity.in/dataset/58925093-3303-456d-8f9d-7e4062465d3c/resource/5f87eb2e-fb94-4a38-bdd7-b2ec6c82e74e/download/proposedcirculationplanblr-bncc.pdf" target="_blank" rel="noopener"><div class="ic">MAP</div><div><b>Full circulation plan, Bengaluru North</b><span>Official plan document. Hebbal Lake is on Grid 7.</span></div></a>
+    <a class="res" data-ev="res_hindu" href="https://www.thehindu.com/news/cities/bangalore/now-one-more-road-proposed-alongside-bengalurus-hebbal-lake/article71620417.ece" target="_blank" rel="noopener"><div class="ic">HIN</div><div><b>The Hindu: one more road alongside Hebbal Lake</b><span>News report on the proposal.</span></div></a>
+    <a class="res" data-ev="res_law" href="https://prsindia.org/files/bills_acts/acts_states/karnataka/2014/2014KR32.pdf" target="_blank" rel="noopener"><div class="ic">LAW</div><div><b>Karnataka Tank Conservation Act, 2014</b><span>The state law on conservation of tanks and lakes. Check for later amendments when citing it.</span></div></a>
+    <a class="res" data-ev="res_ngt" href="https://indianexpress.com/article/cities/bangalore/ngt-takes-suo-motu-cognisance-of-buffer-zone-reduction-around-lakes-karnataka-10213014/" target="_blank" rel="noopener"><div class="ic">NGT</div><div><b>Lake buffer zones, explained</b><span>Indian Express (Aug 2025) on the National Green Tribunal stepping in over reduced lake buffer zones.</span></div></a>
+  </div>
+</section>
+
+<section id="share">
+  <div class="kicker">Spread the word</div>
+  <h2>One share multiplies voices</h2>
+  <div class="card">
+    <p class="sub" style="margin-bottom:12px">Send this page to people who care about Bengaluru. Each person should review and send their own suggestion.</p>
+    <div class="sharebox">
+      <button class="btn btn-primary" id="copyLink" data-ev="share_copy">Copy page link</button>
+      <a class="btn btn-ghost" id="waShare" data-ev="share_whatsapp" target="_blank" rel="noopener" href="#">Share on WhatsApp</a>
+    </div>
+  </div>
+</section>
+
+<section id="feedback">
+  <div class="kicker">For the campaign</div>
+  <h2>Suggestions for this page</h2>
+  <div class="card">
+    <p class="sub" style="margin-bottom:12px">Spotted something wrong, or have an idea to reach more people? Tell us.</p>
+    <a class="btn btn-ghost" id="feedbackBtn" data-ev="feedback" href="#" style="display:none">Send feedback</a>
+    <p class="tiny" id="feedbackSoon">A feedback channel is being set up. Please check back soon.</p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b>A citizen initiative for Hebbal Lake.</b></p>
+    <p style="margin-top:8px">Not affiliated with the Greater Bengaluru Authority or any government body. Please verify details with the official gazette notice linked above.</p>
+    <p style="margin-top:8px" id="privacy">Privacy: your concern and name stay on your device and only leave inside the email you send yourself. If you accept the notice, this page counts visits and button taps (a random per-visit id, device type and where you came from) and Microsoft Clarity may record session replays of how the page is used; the personal fields and the email preview are excluded from this capture. Clarity data is processed by Microsoft under <a href="https://privacy.microsoft.com/en-us/privacystatement" target="_blank" rel="noopener">its privacy statement</a>. Decline and nothing is counted or recorded.</p>
+  </div>
+</footer>
+
+<div id="consent" role="dialog" aria-label="Analytics consent">
+  With your OK, this page counts visits and button taps, and Microsoft Clarity may record how the page is used (session replays). What you type, your name and the email preview are excluded. <a href="#privacy" style="color:#7fd1c3">Details in the privacy note below</a>.
+  <div class="row"><button id="cYes">Accept</button><button id="cNo">Decline</button></div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+// ===== Campaign configuration (set before publishing) =====
+const CONFIG = {
+  clarityId: "",        // Microsoft Clarity project ID (loads only after visitor consent)
+  sheetEndpoint: "",    // Google Apps Script web app URL for anonymous funnel events
+  feedbackEmail: ""     // e.g. campaign inbox, or leave "" while the form is being set up
+};
+
+// ===== Anonymous funnel events =====
+const SRC = (new URLSearchParams(location.search)).get("src") || "direct";
+const SID = (function(){ let s = sessionStorage.getItem("sid"); if(!s){ s = Math.random().toString(36).slice(2,10); sessionStorage.setItem("sid", s);} return s; })();
+function consented(){ return localStorage.getItem("consent") === "yes"; }
+function logEvent(name, extra){
+  if(!consented()) return;
+  try{ if(window.clarity) window.clarity("event", name); }catch(e){}
+  try{
+    if(CONFIG.sheetEndpoint){
+      const payload = Object.assign({ts:new Date().toISOString(), ev:name, src:SRC, sid:SID,
+        dev:(matchMedia("(pointer:coarse)").matches?"mobile":"desktop")}, extra || {});
+      const blob = new Blob([JSON.stringify(payload)], {type:"text/plain"});
+      if(navigator.sendBeacon){ navigator.sendBeacon(CONFIG.sheetEndpoint, blob); }
+      else { fetch(CONFIG.sheetEndpoint,{method:"POST",mode:"no-cors",body:JSON.stringify(payload)}); }
+    }
+  }catch(e){}
+}
+function concernDone(){ return document.getElementById("concern").value.trim() ? 1 : 0; }
+document.querySelectorAll("[data-ev]").forEach(function(el){
+  el.addEventListener("click", function(){
+    const ev = el.getAttribute("data-ev");
+    const extra = (ev === "copy_email" || ev === "open_email") ? {concern: concernDone()} : {};
+    logEvent(ev, extra);
+  });
+});
+// page_view fires only after consent (see consent block below)
+
+// ===== Clarity, only after consent =====
+const consentBar = document.getElementById("consent");
+function loadClarity(){
+  if(!CONFIG.clarityId) return;
+  (function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",CONFIG.clarityId);
+}
+if(CONFIG.clarityId || CONFIG.sheetEndpoint){
+  const saved = localStorage.getItem("consent");
+  if(saved === "yes"){ loadClarity(); logEvent("page_view"); }
+  else if(saved !== "no"){ consentBar.style.display = "block"; }
+  document.getElementById("cYes").onclick = function(){ localStorage.setItem("consent","yes"); consentBar.style.display="none"; loadClarity(); logEvent("page_view"); };
+  document.getElementById("cNo").onclick = function(){ localStorage.setItem("consent","no"); consentBar.style.display="none"; };
+}
+
+// ===== Email composer =====
+const TO = "gba.masterplan@gmail.com";
+const SUBJECT = "Suggestion on proposed Hebbala-Thanisandra road beside Hebbal Lake - Bengaluru North Road Circulation Plan, Grid 7";
+function buildBody(){
+  const c = document.getElementById("concern").value.trim();
+  const n = document.getElementById("name").value.trim();
+  let b = "To the Chief Town Planner,\nGreater Bengaluru Authority,\n\n";
+  b += "With reference to Notification No. CC/GBA/PR/304/2026-27 dated 12 October 2026, I submit my suggestions on the proposed 12-metre Hebbala-Thanisandra road beside Hebbal Lake, shown on the Bengaluru North City Corporation road circulation plan, Grid 7.\n\n";
+  if(c){ b += "My concern:\n" + c + "\n\n"; }
+  b += "I request that GBA:\n";
+  b += "1. Reconsider the alignment to avoid harm to the lake, its bund, trees and connecting drainage corridor.\n";
+  b += "2. Publish an assessment of the ecological, drainage and flood-risk implications before proceeding.\n";
+  b += "3. Evaluate and publish alternatives, including better public transport and improvements to existing roads and junctions, rather than treating additional road space beside the lake as the only solution.\n\n";
+  b += "Traffic needs attention, but protecting Bengaluru's lakes and the interests of future generations must be part of the solution.\n\n";
+  b += "Please acknowledge receipt and consider these suggestions during the public consultation.\n\n";
+  b += "Regards,\n" + (n || "A concerned Bengaluru resident");
+  return b;
+}
+function refresh(){
+  const body = buildBody();
+  document.getElementById("preview").textContent = "To: " + TO + "\nSubject: " + SUBJECT + "\n\n" + body;
+  document.getElementById("openMail").href = "mailto:" + TO + "?subject=" + encodeURIComponent(SUBJECT) + "&body=" + encodeURIComponent(body);
+}
+document.getElementById("concern").addEventListener("input", refresh);
+document.getElementById("name").addEventListener("input", refresh);
+refresh();
+
+// ===== Copy helpers =====
+function toast(msg){ const t = document.getElementById("toast"); t.textContent = msg; t.style.display = "block"; setTimeout(function(){ t.style.display = "none"; }, 2200); }
+function showSent(){ document.getElementById("sentbox").style.display = "block"; }
+document.getElementById("copyMail").addEventListener("click", function(){
+  const text = "To: " + TO + "\nSubject: " + SUBJECT + "\n\n" + buildBody();
+  navigator.clipboard.writeText(text).then(function(){ toast("Email copied. Paste it into your email app."); showSent(); });
+});
+document.getElementById("openMail").addEventListener("click", function(){ setTimeout(showSent, 1200); });
+document.getElementById("iSent").addEventListener("click", function(){
+  logEvent("self_report_sent");
+  this.disabled = true; this.textContent = "Thank you. Every voice counts.";
+});
+document.getElementById("copyLink").addEventListener("click", function(){
+  const u = location.origin + location.pathname;
+  navigator.clipboard.writeText(u).then(function(){ toast("Page link copied."); });
+});
+document.getElementById("waShare").href = "https://wa.me/?text=" + encodeURIComponent(
+  "Hebbal Lake needs our voice. A 12 m road is proposed beside the lake, and GBA is inviting public suggestions now. Send yours in 2 minutes: " + location.origin + location.pathname + "?src=whatsapp");
+
+// ===== Feedback =====
+if(CONFIG.feedbackEmail){
+  const fb = document.getElementById("feedbackBtn");
+  fb.href = "mailto:" + CONFIG.feedbackEmail + "?subject=" + encodeURIComponent("Feedback: Hebbal Lake suggestion page");
+  fb.style.display = "block";
+  document.getElementById("feedbackSoon").style.display = "none";
+}
+</script>
+</body>
+</html>
